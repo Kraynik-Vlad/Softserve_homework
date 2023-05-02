@@ -62,3 +62,45 @@ for (let i = 0; i < arr.length; i++) {
 arr = newArr;
 
 console.log(arr) // [4, 2, 1, 6, 3, 2]
+
+//task 5
+let A = prompt("Введіть довжину сторони A:");
+let B = prompt("Введіть довжину сторони B:");
+let C = prompt("Введіть довжину сторони C:");
+
+let p = (A+B+C)/2;
+let s = Math.sqrt(p * (p - A) * (p - B) * (p - C));
+console.log("Площа трикутника: " + s.toFixed(3));
+
+if (Math.pow(A, 2) + Math.pow(B, 2) === Math.pow(C, 2)) {
+  console.log('Трикутник є прямокутним');
+} else {
+  console.log('Трикутник не є прямокутним');
+}
+
+//task 6
+let time = new Date().getHours();
+
+if (time >= 23 || time < 5) {
+  console.log("Доброї ночі");
+} else if (time >= 5 && time < 11) {
+  console.log("Доброго ранку");
+} else if (time >= 11 && time < 17) {
+  console.log("Доброго дня");
+} else {
+  console.log("Доброго вечора");
+}
+
+switch (true) {
+  case (time >= 23 || time < 5):
+    console.log("Доброї ночі");
+    break;
+  case (time >= 5 && time < 11):
+    console.log("Доброго ранку");
+    break;
+  case (time >= 11 && time < 17):
+    console.log("Доброго дня");
+    break;
+  default:
+    console.log("Доброго вечора");
+}

@@ -1,0 +1,224 @@
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.lists-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-left,
+.wave-right {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  background-color: #272727;
+  z-index: 1;
+}
+
+.wave-left {
+  left: -20px;
+}
+
+.wave-right {
+  right: -20px;
+}
+
+.wave-left:before,
+.wave-right:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #272727;
+  animation: wave 2s infinite;
+}
+
+.wave-left:before {
+  transform-origin: bottom left;
+  transform: skewX(-45deg);
+}
+
+.wave-right:before {
+  transform-origin: bottom right;
+  transform: skewX(45deg);
+}
+
+.list {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #292929;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.list-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+  position: relative; /* Додано для позиціювання кнопки видалення */
+}
+
+.delete-list-button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  border: none;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 50%;
+}
+
+.list-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-item {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #343434;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  background-color: #464646;
+}
+
+.list-item-text {
+  flex-grow: 1;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.list-item-checkmark {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #606060;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+
+.list-item.done .list-item-checkmark {
+  border-color: #00b7ff;
+  background-color: #00b7ff;
+}
+
+.new-item-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.new-item-input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: #343434;
+  color: #fff;
+}
+
+.new-item-button {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: #00b7ff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.new-item-button:hover {
+  background-color: #00a1d6;
+}
+
+.list-item {
+  /* Your existing styles for list items */
+  transition: transform 0.5s ease;
+}
+
+.list-item.delete-animation {
+  text-decoration: line-through;
+  transition: text-decoration 0.5s ease;
+}
+
+.list-item.move-animation {
+  transition: transform 0.5s ease;
+}
+
+.list-item.fadeout-animation {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.new-list-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Додано відступ зверху */
+  margin-bottom: 20px; /* Додано відступ знизу */
+  text-align: center; /* Додано для центрування тексту */
+}
+
+.new-list-input {
+  margin-right: 8px;
+}
+
+.new-list-button {
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+@keyframes wave {
+  0% {
+    transform: scaleY(0.8);
+  }
+  50% {
+    transform: scaleY(1.2);
+  }
+  100% {
+    transform: scaleY(0.8);
+  }
+}
